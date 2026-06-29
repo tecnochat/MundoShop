@@ -29,7 +29,9 @@ const catNames = {
 };
 const catInfo = catNames[product.category] || { label: product.category, emoji: '' };
 
-const siteUrl = 'https://tumundshop.com';
+const siteUrl = process.env.RAILWAY_PUBLIC_DOMAIN
+  ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+  : 'https://mundo-shop.up.railway.app';
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',

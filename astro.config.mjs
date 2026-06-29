@@ -23,7 +23,7 @@ export default defineConfig({
       lastmod: new Date(),
       serialize(item) {
         // Home: máxima prioridad
-        if (item.url === 'https://tumundshop.com/') {
+        if (item.url === `${siteUrl}/`) {
           item.changefreq = 'daily';
           item.priority = 1.0;
         }

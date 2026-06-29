@@ -21,7 +21,9 @@ const {
 
 const canonicalURL = Astro.url.href;
 const siteName = 'Tu Mundo Shop';
-const siteUrl = 'https://tumundshop.com';
+const siteUrl = process.env.RAILWAY_PUBLIC_DOMAIN
+  ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+  : 'https://mundo-shop.up.railway.app';
 ---
 
 <!doctype html>
