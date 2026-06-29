@@ -1,0 +1,64 @@
+---
+// Página 404 personalizada
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Página no encontrada" description="La página que buscas no existe o fue movida.">
+  <Header />
+  <main class="not-found">
+    <div class="container">
+      <div class="not-found__content">
+        <span class="not-found__code">404</span>
+        <h1 class="not-found__title">Página no encontrada</h1>
+        <p class="not-found__text">
+          Lo sentimos, la página que estás buscando no existe o fue movida a otra dirección.
+        </p>
+        <a href="/" class="btn btn-primary btn-lg">
+          ← Volver al inicio
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--header-height);
+  }
+
+  .not-found__content {
+    text-align: center;
+    padding: var(--space-3xl) 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .not-found__code {
+    display: block;
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-md);
+  }
+
+  .not-found__title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .not-found__text {
+    color: var(--color-gray-500);
+    max-width: 400px;
+    margin: 0 auto var(--space-xl);
+  }
+</style>

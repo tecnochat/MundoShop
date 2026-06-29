@@ -1,0 +1,173 @@
+---
+// BusinessInfo — Información del negocio, horarios, contacto
+---
+
+<section id="info" class="info-section section">
+  <div class="container">
+    <span class="section-subtitle">🏪 Información del Negocio</span>
+    <h2 class="section-title">Estamos para servirte</h2>
+
+    <div class="info-section__grid">
+      <!-- Horarios -->
+      <div class="info-card">
+        <div class="info-card__header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <h3>Horarios de Atención</h3>
+        </div>
+        <div class="info-card__body">
+          <div class="info-row">
+            <span>Lunes a Viernes</span>
+            <strong>9:00 — 19:00</strong>
+          </div>
+          <div class="info-row">
+            <span>Sábados</span>
+            <strong>10:00 — 15:00</strong>
+          </div>
+          <div class="info-row">
+            <span>Domingos</span>
+            <strong>Cerrado</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto -->
+      <div class="info-card">
+        <div class="info-card__header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <h3>Contacto Directo</h3>
+        </div>
+        <div class="info-card__body">
+          <div class="info-row">
+            <span>WhatsApp</span>
+            <strong>
+              <a href="https://wa.me/5491122334400" target="_blank" rel="noopener" class="info-link">
+                +57 320457862
+              </a>
+            </strong>
+          </div>
+          <div class="info-row">
+            <span>Email</span>
+            <strong>
+              <a href="mailto:info@tumundshop.com" class="info-link">
+                info@tumundshop.com
+              </a>
+            </strong>
+          </div>
+          <div class="info-row">
+            <span>Redes</span>
+            <strong>
+              <a href="#" class="info-link">@tumundshop</a>
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ubicación -->
+      <div class="info-card">
+        <div class="info-card__header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <h3>Ubicación</h3>
+        </div>
+        <div class="info-card__body">
+          <div class="info-row">
+            <span>Dirección</span>
+            <strong>Av. Corrientes 1234, CABA</strong>
+          </div>
+          <div class="info-row">
+            <span>Local</span>
+            <strong>Microcentro, Buenos Aires</strong>
+          </div>
+          <div class="info-row">
+            <span>Código Postal</span>
+            <strong>C1043</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .info-section {
+    background: var(--color-gray-50);
+  }
+
+  .info-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .info-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+  }
+
+  .info-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-light);
+  }
+
+  .info-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .info-card__header svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .info-card__header h3 {
+    font-size: var(--text-base);
+    font-weight: 700;
+  }
+
+  .info-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-sm);
+    padding: var(--space-xs) 0;
+  }
+
+  .info-row span {
+    color: var(--color-gray-500);
+  }
+
+  .info-row strong {
+    color: var(--color-gray-800);
+    font-weight: 600;
+  }
+
+  .info-link {
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+  }
+
+  .info-link:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
+</style>

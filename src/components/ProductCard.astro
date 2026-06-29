@@ -1,0 +1,180 @@
+---
+// ProductCard — Tarjeta individual de producto
+import WhatsAppButton from './WhatsAppButton.astro';
+
+export interface Props {
+  product: {
+    id: number;
+    name: string;
+    category: string;
+    slug: string;
+    description: string;
+    price: string;
+    features: string[];
+    highlight: string;
+    image?: string;
+    whatsapp: string;
+  };
+}
+
+const { product } = Astro.props;
+const imageSrc = product.image;
+---
+
+<article class="product-card" itemscope itemtype="https://schema.org/Product">
+  <!-- Imagen -->
+  <a href={`/productos/${product.slug}`} class="product-card__image-wrapper" tabindex="-1">
+    <img
+      src={imageSrc}
+      alt={product.name}
+      class="product-card__image"
+      loading="lazy"
+      decoding="async"
+      width="600"
+      height="400"
+      itemprop="image"
+    />
+    <div class="product-card__overlay">
+      <span class="product-card__view-more">Ver detalle</span>
+    </div>
+  </a>
+
+  <!-- Contenido -->
+  <div class="product-card__body">
+    <h3 class="product-card__title" itemprop="name">
+      <a href={`/productos/${product.slug}`}>{product.name}</a>
+    </h3>
+
+    <!-- Precio -->
+    <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="product-card__price-value" itemprop="price">{product.price}</span>
+      <meta itemprop="priceCurrency" content="ARS" />
+      <meta itemprop="availability" content="https://schema.org/InStock" />
+    </div>
+
+    <!-- Acciones -->
+    <div class="product-card__actions">
+      <a href={`/productos/${product.slug}`} class="btn btn-outline">
+        Ver más
+      </a>
+      <WhatsAppButton phone={product.whatsapp} productName={product.name} />
+    </div>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--color-primary-light);
+  }
+
+  /* Imagen */
+  .product-card__image-wrapper {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    background: var(--color-gray-100);
+  }
+
+  .product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .product-card:hover .product-card__image {
+    transform: scale(1.05);
+  }
+
+  .product-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-base);
+  }
+
+  .product-card:hover .product-card__overlay {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .product-card__view-more {
+    color: white;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-base);
+    padding: var(--space-sm) var(--space-lg);
+    border: 2px solid white;
+    border-radius: var(--radius-full);
+  }
+
+  .product-card:hover .product-card__view-more {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Body */
+  .product-card__body {
+    padding: var(--space-sm) var(--space-sm) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .product-card__title {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .product-card__title a {
+    color: var(--color-gray-900);
+    transition: color var(--transition-fast);
+  }
+
+  .product-card__title a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Precio */
+  .product-card__price {
+    margin-top: auto;
+  }
+
+  .product-card__price-value {
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  /* Acciones */
+  .product-card__actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .product-card__actions .btn {
+    flex: 1;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+  }
+</style>

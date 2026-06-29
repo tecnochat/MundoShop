@@ -1,0 +1,52 @@
+---
+// ProductGrid — Grilla de productos por categoría
+import ProductCard from './ProductCard.astro';
+import { getProductsByCategory } from '../data/products';
+
+export interface Props {
+  categoryId: string;
+  categoryName: string;
+  categoryIcon: string;
+  categoryDescription: string;
+}
+
+const { categoryId, categoryName, categoryIcon, categoryDescription } = Astro.props;
+const categoryProducts = getProductsByCategory(categoryId);
+---
+
+<section id={categoryId} class="category-section section">
+  <div class="container">
+    <div class="category-section__header">
+      <h2 class="section-title">{categoryIcon} {categoryName}</h2>
+      <p class="category-section__description">{categoryDescription}</p>
+    </div>
+
+    <div class="grid grid-3">
+      {categoryProducts.map(product => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .category-section {
+    scroll-margin-top: var(--header-height);
+  }
+
+  .category-section:nth-child(even) {
+    background: var(--color-gray-50);
+  }
+
+  .category-section__header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .category-section__description {
+    max-width: 500px;
+    margin: calc(-1 * var(--space-lg)) auto 0;
+    color: var(--color-gray-500);
+    font-size: var(--text-sm);
+  }
+</style>

@@ -1,0 +1,207 @@
+---
+// Footer — Pie de página con enlaces y copyright
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <span class="footer__logo-icon">M</span>
+          <span class="footer__logo-text">Tu Mundo <span class="footer__logo-highlight">Shop</span></span>
+        </a>
+        <p class="footer__description">
+          Tu tienda de confianza para productos tecnológicos seleccionados. Calidad, variedad y el mejor servicio.
+        </p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links rápidos -->
+      <div class="footer__col">
+        <h4 class="footer__title">Categorías</h4>
+        <ul class="footer__links">
+          <li><a href="/#premium">⭐ Premium</a></li>
+          <li><a href="/#estandar">✅ Estándar</a></li>
+          <li><a href="/#nuevos">🆕 Nuevos</a></li>
+          <li><a href="/#exclusivos">🔥 Exclusivos</a></li>
+        </ul>
+      </div>
+
+      <!-- Información -->
+      <div class="footer__col">
+        <h4 class="footer__title">Información</h4>
+        <ul class="footer__links">
+          <li><a href="/#pagos">Formas de pago</a></li>
+          <li><a href="/#envios">Envíos</a></li>
+          <li><a href="/#info">Sobre nosotros</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer__col">
+        <h4 class="footer__title">Contacto</h4>
+        <ul class="footer__links">
+          <li>
+            <a href="https://wa.me/5491122334400" target="_blank">
+              WhatsApp: +57 320457862
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@tumundshop.com">
+              info@tumundshop.com
+            </a>
+          </li>
+          <li>Av. Corrientes 1234, CABA</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {new Date().getFullYear()} Tu Mundo Shop. Todos los derechos reservados.</p>
+      <p class="footer__made-with">
+        Hecho con ❤️ para vos
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-gray-900);
+    color: var(--color-gray-300);
+    padding: var(--space-3xl) 0 0;
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-gray-700);
+  }
+
+  @media (min-width: 640px) {
+    .footer__grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .footer__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--color-primary), #1e3a5f);
+    color: white;
+    font-size: var(--text-base);
+    font-weight: 800;
+    border-radius: var(--radius-md);
+  }
+
+  .footer__logo-text {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .footer__logo-highlight {
+    color: var(--color-primary-light);
+  }
+
+  .footer__description {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .footer__social {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-lg);
+    background: var(--color-gray-700);
+    color: var(--color-gray-300);
+    transition: all var(--transition-fast);
+  }
+
+  .footer__social-link:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .footer__title {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer__links a {
+    font-size: var(--text-sm);
+    color: var(--color-gray-400);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover {
+    color: var(--color-primary-light);
+  }
+
+  .footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) 0;
+    font-size: var(--text-xs);
+    color: var(--color-gray-500);
+  }
+
+  .footer__made-with {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  @media (max-width: 640px) {
+    .footer__bottom {
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-align: center;
+    }
+  }
+</style>
