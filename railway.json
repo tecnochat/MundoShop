@@ -5,7 +5,7 @@
     "buildCommand": "npm run build"
   },
   "deploy": {
-    "static": true,
+    "startCommand": "npx serve dist -l $PORT --no-clipboard --single",
     "restartPolicyType": "never"
   }
 }
